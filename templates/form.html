@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block headextra %} {{form.media}}{% endblock %}
+
+{% block head_title%}Create {% endblock head_title%}
+
+{% block content %}
+<div class="col-sm-6 col-sm-offset-3">
+<h1>{{title}} </h1>
+	<form method="POST" action=""> {% csrf_token%}
+		{{form|crispy}}
+		<input class="btn btn-primary" type="submit" name="createPost" value="Log in">
+	</form>
+</div>
+{% endblock content%}
+	
